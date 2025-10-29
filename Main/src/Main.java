@@ -1,15 +1,28 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-        //Temperature tracker.
+        //Temperature tracker. User input
+        Scanner scanner = new Scanner(System.in);
 
-        double[] temperature = {27.4, 19.3, 21.6, 25.4, 38.4, 36.5, 20.7};
+        //Determine array size.
+        System.out.print("Enter the size of the array: ");
+        int arraySize = scanner.nextInt();
+
+        //Variable/Array Declaration and Initialization
+        double[] temperature = new double[arraySize];
         double sum = 0;
-        for(double temp : temperature){
-            System.out.println(temp);
-            sum += temp;
+
+        for(int i = 0; i < temperature.length; i++){
+            System.out.print("Please enter your daily temperature, day-" + (i + 1) + ": ");
+            temperature[i] = scanner.nextDouble();
+            sum += temperature[i];
         }
 
+        //Output of the average
         System.out.printf("The average is: %.2f",  (sum / temperature.length));
+
+        scanner.close();
     }
 }
