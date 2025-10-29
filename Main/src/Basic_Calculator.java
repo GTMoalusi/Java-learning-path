@@ -14,16 +14,30 @@ public class Basic_Calculator {
         System.out.print("Please enter your operator(+, -, /, *, %): ");
         char operator = scanner.next().charAt(0);
 
+        //Calling my methods.
+        addition(firstNum, secondNum, thirdNum, operator);
+        subtraction(firstNum, secondNum, thirdNum, operator);
+        division(firstNum, secondNum, thirdNum, operator);
+        multiplication(firstNum, secondNum, thirdNum, operator);
+        modulus(firstNum, secondNum, thirdNum, operator);
+    }
+
+    public static void addition(double firstNum, double secondNum, double thirdNum, char operator){
         if(operator == '+'){
             double sum = firstNum + secondNum + thirdNum;
             System.out.println(sum);
-        }else if(operator == '-'){
+        }
+    }
+
+    public static void subtraction(double firstNum, double secondNum, double thirdNum, char operator){
+        if(operator == '-'){
             double sum = firstNum - secondNum - thirdNum;
             System.out.println(sum);
-        }else if(operator == '*'){
-            double sum = firstNum * secondNum * thirdNum;
-            System.out.println(sum);
-        }else if(operator == '/'){
+        }
+    }
+
+    public static void division(double firstNum, double secondNum, double thirdNum, char operator){
+        if(operator == '/'){
             if(firstNum == 0){
                 double sum = secondNum / thirdNum;
                 System.out.println(sum);
@@ -34,7 +48,18 @@ public class Basic_Calculator {
                 double sum = firstNum / secondNum;
                 System.out.println(sum);
             }
-        }else if(operator == '%'){
+        }
+    }
+
+    public static void multiplication(double firstNum, double secondNum, double thirdNum, char operator){
+        if(operator == '*'){
+            double sum = firstNum * secondNum * thirdNum;
+            System.out.println(sum);
+        }
+    }
+
+    public static void modulus(double firstNum, double secondNum, double thirdNum, char operator){
+        if(operator == '%'){
             if(firstNum == 0){
                 double sum = secondNum % thirdNum;
                 System.out.println(sum);
