@@ -44,7 +44,7 @@ public class Basic_Calculator {
             }else if(secondNum == 0){
                 double sum = firstNum / thirdNum;
                 System.out.println(sum);
-            }else if(thirdNum == 0){
+            }else{
                 double sum = firstNum / secondNum;
                 System.out.println(sum);
             }
@@ -66,7 +66,7 @@ public class Basic_Calculator {
             }else if(secondNum == 0){
                 double sum = firstNum % thirdNum;
                 System.out.println(sum);
-            }else if(thirdNum == 0){
+            }else{
                 double sum = firstNum % secondNum;
                 System.out.println(sum);
             }
