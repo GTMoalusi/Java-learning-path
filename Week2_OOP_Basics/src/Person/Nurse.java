@@ -20,6 +20,11 @@ public class Nurse extends Person{
         return super.toString() + "\nYears of Experience: " + experience;
     }
 
+    @Override
+    public void work() {
+        System.out.println(name + " is working with the doctor on their patient.");
+    }
+
     //Getters & Setters
     public int getExperience() {
         return experience;

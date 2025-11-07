@@ -15,11 +15,15 @@ public class Person {
         this.race = race;
     }
 
-    @Override
+    //Unique Method
     public String toString(){
         return "Name: " + name +
                 "\nAge: " + age +
                 "\nGender: " + gender +
                 "\nRace: " + race;
+    }
+
+    public void work(){
+        System.out.println(name + " is working.");
     }
 }

@@ -26,6 +26,11 @@ public class Doctor extends Person{
                 "\nDate: " + date;
     }
 
+    @Override
+    public void work(){
+        System.out.println(name + " is working on a patient.");
+    }
+
     //Getters & Setters
     public String getMedicine() {
         return medicine;
