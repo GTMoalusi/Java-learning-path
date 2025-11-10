@@ -3,20 +3,20 @@ package Person;
 public class Main {
     public static void main(String[] args) {
 
-        //Person Object (Polymorphism)
+        //HospitalRoleSystem.Person Object (Polymorphism)
         Person person1 = new Doctor("Dr Moalusi", 32, "Male", "Black", "Panado");
         Person person2 = new Nurse("Sister Thandi", 28, "Female", "Black", 5);
 
-        //Doctor and Nurse Objects
+        //HospitalRoleSystem.Doctor and HospitalRoleSystem.Nurse Objects
         Doctor doctor = new Doctor("Dr Moalusi", 32, "Male", "Black", "Panado");
         Nurse nurse = new Nurse("Sister Thandi", 28, "Female", "Black", 5);
 
         //Outputs
-        System.out.println("=== Doctor Details ===");
+        System.out.println("=== HospitalRoleSystem.Doctor Details ===");
         System.out.println(doctor);
         doctor.prescribeMedicine();
 
-        System.out.println("\n=== Nurse Details ===");
+        System.out.println("\n=== HospitalRoleSystem.Nurse Details ===");
         System.out.println(nurse);
         nurse.assistDoctor();
 

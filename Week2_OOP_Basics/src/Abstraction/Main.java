@@ -8,12 +8,12 @@ public class Main {
         Employee nurse = new Nurse("Sis Thembi", 29);
 
         //Objects using Workable as Reference
-        //Workable doctor = new Doctor("Dr Moalusi", 46);
-        //Workable nurse = new Nurse("Sis Thembi", 29);
+        //Workable doctor = new HospitalRoleSystem.Doctor("Dr Moalusi", 46);
+        //Workable nurse = new HospitalRoleSystem.Nurse("Sis Thembi", 29);
 
         //Objects
-        //Doctor doctor = new Doctor("Dr Moalusi", 46);
-        //Nurse nurse = new Nurse("Sis Thembi", 29);
+        //HospitalRoleSystem.Doctor doctor = new HospitalRoleSystem.Doctor("Dr Moalusi", 46);
+        //HospitalRoleSystem.Nurse nurse = new HospitalRoleSystem.Nurse("Sis Thembi", 29);
 
         //Polymorphism
         //((Employee) doctor).calculatePay();
