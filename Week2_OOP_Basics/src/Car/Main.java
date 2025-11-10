@@ -1,18 +1,11 @@
+package Car;
+
 public class Main {
     public static void main(String[] args) {
         //Objects
         Car myFirstCar = new Car("Audi","RS7","Metallic Red",2025);
         Car mySecondCar = new Car("BMW","M4-Competition","Black",2024);
         Car myThirdCar = new Car("Volkswagen","Golf 8.5-R","Black",2025);
-
-        //Necessary if you want to use the toString() method to display details.
-//       System.out.println(myFirstCar.toString());
-//       System.out.println();
-//        System.out.println(mySecondCar.toString());
-//       System.out.println();
-//       System.out.println(myThirdCar.toString());
-
-        //Interact with the car
 
         //First Car
         myFirstCar.displayInfo();
