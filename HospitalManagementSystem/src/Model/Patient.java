@@ -1,6 +1,8 @@
 package Model;
 
-public class Patient extends Person{
+import Interface.Schedulable;
+
+public class Patient extends Person implements Schedulable {
     //Attributes
     private String patientId;
     private String medicalHistory;
@@ -16,37 +18,32 @@ public class Patient extends Person{
         this.contactInfo = contactInfo;
     }
 
-    //Getters & Setters
-    public String getPatientId() {
-        return patientId;
-    }
-
+    //Setters
     public void setPatientId(String patientId) {
         this.patientId = patientId;
     }
-
-    public String getMedicalHistory() {
-        return medicalHistory;
-    }
-
     public void setMedicalHistory(String medicalHistory) {
         this.medicalHistory = medicalHistory;
     }
-
-    public Address getAddress() {
-        return address;
-    }
-
     public void setAddress(Address address) {
         this.address = address;
     }
-
-    public ContactInfo getContactInfo() {
-        return contactInfo;
-    }
-
     public void setContactInfo(ContactInfo contactInfo) {
         this.contactInfo = contactInfo;
+    }
+
+    //Getters
+    public String getPatientId() {
+        return patientId;
+    }
+    public String getMedicalHistory() {
+        return medicalHistory;
+    }
+    public Address getAddress() {
+        return address;
+    }
+    public ContactInfo getContactInfo() {
+        return contactInfo;
     }
 
     //Unique Methods
@@ -62,4 +59,8 @@ public class Patient extends Person{
         System.out.println("Contact: " + contactInfo);
     }
 
+    @Override
+    public void scheduleAppointment() {
+        System.out.println("The patient must get registered");
+    }
 }

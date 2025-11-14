@@ -1,33 +1,34 @@
 package Main;
 
-import Model.Address;
-import Model.ContactInfo;
-import Model.Hospital;
-import Model.Patient;
+import Model.*;
 import Service.PatientService;
 
 public class Main {
     public static void main(String[] args) {
 
-        ContactInfo hospitalContacts = new ContactInfo("(011)-952-2234", "moalusi.privatehospital@medi.co.za");
-        Hospital hospital = new Hospital("Moalusi Private Hospital", "14th Avenue, Sandton City, Johannesburg", hospitalContacts);
+        System.out.println("\n=== Testing Schedulable Interface ===");
 
-        hospital.displayHospitalInfo();
+        Doctor doctor = new Doctor("Dr Thabang Moalusi", "Male", 34, "Black", "1000001",
+                "Cardiologist", "Cardiology");
+
+        Nurse nurse = new Nurse("Sis Thembi", "Female", 29, "Black", "100002",
+                "Cardiology", "Cardiology");
+
+        Address address = new Address("232", "Viljoen Street", "Krugersdorp", "Gauteng", "1739");
+        ContactInfo contactInfo = new ContactInfo("0799977183", "jacob.williams@gmail.com");
+        Patient patient = new Patient("Jacob Williams", "Male", 76, "White", "2025111402",
+                "Heart Disease and Hypertension", address, contactInfo);
+
+        doctor.scheduleAppointment();
+        nurse.scheduleAppointment();
+        patient.scheduleAppointment();
+
         System.out.println();
 
-        PatientService patientService = new PatientService();
-        Address address = new Address("Unit 20", "Robert broom drive", "Krugersdorp", "Gauteng", "1739");
-        ContactInfo patient_1 = new ContactInfo("0799977183", "thabang.moalusi@yahoo.com");
-        Patient patient = new Patient("Thabang Moalusi", "Male", 32, "Black", "2025111301",
-                "No record", address, patient_1);
-
-        patientService.registerPatient(patient);
-        patientService.viewPatientDetails("2025111301");
+        doctor.displayInfo();
         System.out.println();
-        patientService.updatePatientDetails("2025111301", "Headache and Fever", address, patient_1);
-        patientService.viewPatientDetails("2025111301");
+        nurse.displayInfo();
         System.out.println();
-        patientService.removePatient("2025111301");
-        patientService.viewPatientDetails("2025111301");
+        patient.displayInfo();
     }
 }

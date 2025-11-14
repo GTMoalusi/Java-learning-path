@@ -16,7 +16,6 @@ public abstract class Person {
     }
 
     //Getters
-
     public String getName() {
         return name;
     }
@@ -41,5 +40,5 @@ public abstract class Person {
                 "\nRace: " + race;
     }
 
-    public abstract void displayInfo();
+    public abstract void displayInfo();  //abstract method
 }
