@@ -1,11 +1,11 @@
 package Book;
 public class Book {
 
-    String title;
-    String author;
-    int price;
+    private String title;
+    private String author;
+    private int price;
 
-    //Constructor
+    //Constructor (Method Override)
     Book(String title, String author, int price){
         this.title = title;
         this.author = author;
@@ -22,6 +22,18 @@ public class Book {
         this.price = 0;
     }
 
+    //Getters
+    public String getTitle() {
+        return title;
+    }
+    public String getAuthor() {
+        return author;
+    }
+    public int getPrice() {
+        return price;
+    }
+
+    //Unique Method
     public String toString(){
         return "Title: " + title + "\nAuthor: " + author + "\nPrice: R" + price + "\n";
     }
