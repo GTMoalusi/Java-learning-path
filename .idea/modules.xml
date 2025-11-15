@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/Main/Main.iml" filepath="$PROJECT_DIR$/Main/Main.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hospital Management System/Patient Management System/Patient Management System.iml" filepath="$PROJECT_DIR$/Hospital Management System/Patient Management System/Patient Management System.iml" />
       <module fileurl="file://$PROJECT_DIR$/Week2_OOP_Basics/Week2_OOP_Basics.iml" filepath="$PROJECT_DIR$/Week2_OOP_Basics/Week2_OOP_Basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week4-Java Data Structures-Collections/Week4-Java Data Structures-Collections.iml" filepath="$PROJECT_DIR$/Week4-Java Data Structures-Collections/Week4-Java Data Structures-Collections.iml" />
     </modules>
   </component>
 </project>

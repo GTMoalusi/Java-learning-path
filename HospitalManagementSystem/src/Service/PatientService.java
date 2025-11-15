@@ -4,10 +4,11 @@ import Model.Address;
 import Model.ContactInfo;
 import Model.Patient;
 import java.util.ArrayList;
+import java.util.List;
 
 public class PatientService {
     //Attributes
-    private ArrayList<Patient> patients = new ArrayList<>();
+    private List<Patient> patients = new ArrayList<>();
 
     //Constructor
     public PatientService(){
