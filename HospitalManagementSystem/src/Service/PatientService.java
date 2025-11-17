@@ -16,6 +16,15 @@ public class PatientService {
     }
 
     //Unique Methods
+    public Patient getPatient(String patientId) {
+        for(Patient patient : patients){
+            if(patient.getPatientId().equals(patientId)){
+                return patient;  // Return the actual patient object
+            }
+        }
+        return null;  // Patient not found
+    }
+
     public void registerPatient(Patient patient){
         patients.add(patient);
     }
@@ -53,6 +62,5 @@ public class PatientService {
         }
         System.out.println("Patient not found!");
     }
-
 
 }

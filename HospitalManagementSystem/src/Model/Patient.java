@@ -8,6 +8,8 @@ public class Patient extends Person implements Schedulable {
     private String medicalHistory;
     private Address address; //Composition
     private ContactInfo contactInfo; //Composition
+    private String medicalNotes;
+    private String nursingNotes;
 
     //Constructor
     public Patient(String name, String gender, int age, String race, String patientId, String medicalHistory, Address address, ContactInfo contactInfo) {
@@ -16,6 +18,8 @@ public class Patient extends Person implements Schedulable {
         this.medicalHistory = medicalHistory;
         this.address = address;
         this.contactInfo = contactInfo;
+        this.medicalNotes = "";
+        this.nursingNotes = "";
     }
 
     //Setters
@@ -31,6 +35,12 @@ public class Patient extends Person implements Schedulable {
     public void setContactInfo(ContactInfo contactInfo) {
         this.contactInfo = contactInfo;
     }
+    public void setMedicalNotes(String medicalNotes) {
+        this.medicalNotes = medicalNotes;
+    }
+    public void setNursingNotes(String nursingNotes) {
+        this.nursingNotes = nursingNotes;
+    }
 
     //Getters
     public String getPatientId() {
@@ -44,6 +54,12 @@ public class Patient extends Person implements Schedulable {
     }
     public ContactInfo getContactInfo() {
         return contactInfo;
+    }
+    public String getMedicalNotes() {
+        return medicalNotes;
+    }
+    public String getNursingNotes() {
+        return nursingNotes;
     }
 
     //Unique Methods
