@@ -5,7 +5,7 @@ import Model.Patient;
 public class DoctorService{
 
     //Attributes
-    private PatientService patientService;
+    private PatientService patientService; //Composition
 
     //Constructor
     public DoctorService(PatientService patientService){

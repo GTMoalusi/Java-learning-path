@@ -6,6 +6,36 @@ import Service.NurseService;
 import Service.PatientService;
 
 public class Main {
+
+    public static void testHashMapPerformance() {
+        System.out.println("\n=== Testing HashMap Performance ===");
+
+        PatientService patientService = new PatientService();
+
+        // Register 100 patients
+        System.out.println("Registering 100 patients...");
+        for(int i = 1; i <= 100; i++) {
+            String id = String.format("P%05d", i);
+            Address addr = new Address("1", "Street", "City", "Province", "1234");
+            ContactInfo contact = new ContactInfo("0123456789", "test@email.com");
+            Patient p = new Patient("Patient " + i, "Male", 30, "Race",
+                    id, "No history", addr, contact);
+            patientService.registerPatient(p);
+        }
+
+        System.out.println("✓ Total patients: " + patientService.getTotalPatients());
+
+        // Test instant lookup
+        System.out.println("\nTesting lookup...");
+        Patient found = patientService.getPatient("P00050");
+        if(found != null) {
+            System.out.println("✓ Found: " + found.getName());
+        }
+
+        // List some IDs
+        patientService.listAllPatientIds();
+    }
+
     public static void main(String[] args) {
 
         // Hospital setup
@@ -46,5 +76,7 @@ public class Main {
         System.out.println("\n=== Final Patient Record ===");
         patientService.viewPatientDetails("2025111402");
 
+        // Add at the end:
+        testHashMapPerformance();
     }
 }
