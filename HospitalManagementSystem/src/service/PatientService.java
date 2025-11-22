@@ -1,8 +1,8 @@
-package Service;
+package service;
 
-import Model.Address;
-import Model.ContactInfo;
-import Model.Patient;
+import model.Address;
+import model.ContactInfo;
+import model.Patient;
 import java.util.HashMap;
 import java.util.Map;
 

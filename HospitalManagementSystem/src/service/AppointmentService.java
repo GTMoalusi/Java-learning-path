@@ -1,6 +1,6 @@
-package Service;
+package service;
 
-import Model.Appointment;
+import model.Appointment;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

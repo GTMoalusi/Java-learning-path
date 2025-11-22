@@ -1,6 +1,6 @@
-package Model;
+package model;
 
-import Interface.Schedulable;
+import controller.Schedulable;
 
 public class Nurse extends Person implements Schedulable {
     //Attributes

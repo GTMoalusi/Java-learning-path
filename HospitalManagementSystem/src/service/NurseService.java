@@ -1,6 +1,6 @@
-package Service;
+package service;
 
-import Model.Patient;
+import model.Patient;
 
 public class NurseService {
     private PatientService patientService;  // Reference to patient data
