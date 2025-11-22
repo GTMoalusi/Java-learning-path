@@ -79,16 +79,4 @@ public class Appointment {
         System.out.println("Patient: " + patient.getName());
         System.out.println("Reason: " + reason);
     }
-
-    public void schedule(){
-
-    }
-
-    public void cancel(){
-
-    }
-
-    public void reschedule(){
-
-    }
 }

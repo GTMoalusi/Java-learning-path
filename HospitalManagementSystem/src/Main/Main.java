@@ -1,11 +1,80 @@
 package Main;
 
 import Model.*;
+import Service.AppointmentService;
 import Service.DoctorService;
 import Service.NurseService;
 import Service.PatientService;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Main {
+
+    public static void testAppointmentService(){
+        System.out.println("\n\n=== TESTING APPOINTMENT SERVICE ===");
+
+        AppointmentService appointmentService = new AppointmentService();
+
+        // Create doctor (FIXED parameter order!)
+        Doctor doctor = new Doctor(
+                "Dr. Smith",         // name
+                "Male",              // gender
+                45,                  // age
+                "White",             // race
+                "D001",              // doctorId
+                "Cardiologist",      // specialization
+                "Cardiology"         // department
+        );
+
+        // Create patient
+        Address addrs = new Address("10063", "Mogale Drive", "Delareyville", "North West", "1003");
+        ContactInfo contact = new ContactInfo("073-455-4324", "amogelang.makgoana@gmail.com");
+        Patient patient = new Patient(
+                "Thato",                          // name
+                "Female",                         // gender
+                25,                               // age
+                "Black",                          // race
+                "P001",                           // patientId
+                "Heart Disease",                  // medicalHistory
+                addrs,                            // address
+                contact                           // contactInfo
+        );
+
+        // Create appointment
+        Appointment appointment = new Appointment(
+                "A001",
+                LocalDate.of(2025, 1, 15),
+                LocalTime.of(10, 30),
+                doctor,
+                patient,
+                "Routine check-up"
+        );
+
+        // Schedule it
+        appointmentService.scheduleAppointment(appointment);
+
+        // View patient appointments
+        appointmentService.viewPatientAppointments("P001");
+
+        // View doctor schedule
+        appointmentService.viewDoctorSchedule("D001");
+
+        // List all
+        appointmentService.listAllAppointments();
+
+        // Test double booking prevention
+        System.out.println("\n--- Testing Double Booking ---");
+        Appointment duplicate = new Appointment(
+                "A002",
+                LocalDate.of(2025, 1, 15),
+                LocalTime.of(10, 30),  // Same time!
+                doctor,
+                patient,
+                "Follow-up"
+        );
+        appointmentService.scheduleAppointment(duplicate);  // Should fail!
+    }
 
     public static void testHashMapPerformance() {
         System.out.println("\n=== Testing HashMap Performance ===");
@@ -78,5 +147,7 @@ public class Main {
 
         // Add at the end:
         testHashMapPerformance();
+        System.out.println("\n\n");
+        testAppointmentService();
     }
 }
