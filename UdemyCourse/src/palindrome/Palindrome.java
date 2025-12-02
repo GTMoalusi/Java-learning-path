@@ -10,7 +10,7 @@ public class Palindrome {
         str = str.toLowerCase();
 
         //2. Create an empty string (we need to compare the given string to something innit...)
-        String reversedStr = "";
+        StringBuilder reversedStr = new StringBuilder();
 
         //3. Create an Array of char (this makes it easier to compare every single character from the given string)
         char[] myChar = str.toCharArray();
@@ -19,11 +19,11 @@ public class Palindrome {
         for(int i = myChar.length - 1; i >= 0; i--){
 
             //5. While looping we are going to Append/Store into the empty string
-            reversedStr += myChar[i];
+            reversedStr.append(myChar[i]);
         }
 
         //6. Compare the new appended string to the given string
-        return str.equals(reversedStr);
+        return str.contentEquals(reversedStr);
     }
 
     public static void main(String[] args) {
