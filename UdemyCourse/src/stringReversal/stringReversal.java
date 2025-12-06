@@ -24,13 +24,13 @@ public class stringReversal {
         return reversalStr;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter your string: ");
         String str = scanner.nextLine();
 
-        System.out.println("Given String is " + str + " and the reversal String is: " + reversalStr(str));
+        System.out.println("Given String is: " + str + " and the reversal String is: " + reversalStr(str));
     }
 }
