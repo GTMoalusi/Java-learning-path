@@ -1,4 +1,4 @@
-package stringReversal;
+package coutWords;
 
 import java.util.Scanner;
 
