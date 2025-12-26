@@ -26,9 +26,4 @@ public class User {
     public String getPassword() {
         return password;
     }
-
-    @Override
-    public String toString(){
-        return name + " \n"+ surname + " \n" + email + " \n" + username;
-    }
 }
