@@ -1,4 +1,4 @@
-package Arithmetics;
+package leetcode_problems;
 
 import java.util.Scanner;
 
