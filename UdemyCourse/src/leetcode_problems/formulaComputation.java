@@ -1,4 +1,4 @@
-package Arithmetics;
+package leetcode_problems;
 
 public class formulaComputation {
     public static void main(String[] args) {
