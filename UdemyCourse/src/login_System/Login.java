@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class Login {
 
-    // ==================== Storage ====================
+    // ==================== Storage ====================**-***9
     static List<User> users = new ArrayList<>();
 
-    static void register(Scanner scanner) {
+    private static void register(Scanner scanner) {
 
         System.out.println("******************** Register Form ********************");
 
@@ -28,6 +28,11 @@ public class Login {
         System.out.print("Please create your password: ");
         String password = scanner.nextLine().trim();
 
+        if (usernameExists(username)) {
+            System.out.println("Username already exists. Please choose another one.");
+            return;
+        }
+
         boolean isValid = validatePassword(password, name, surname);
 
         if (isValid) {
@@ -38,7 +43,16 @@ public class Login {
         }
     }
 
-    static boolean validatePassword(String password, String name, String surname) {
+    private static boolean usernameExists(String username) {
+        for (User user : users) {
+            if (user.getUsername().equalsIgnoreCase(username)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean validatePassword(String password, String name, String surname) {
 
         boolean symbolFound = false;
         boolean numberFound = false;
@@ -75,7 +89,7 @@ public class Login {
                 !lowerPassword.contains(lowerSurname);
     }
 
-    static void login(Scanner scanner) {
+    private static void login(Scanner scanner) {
 
         System.out.println("******************** Login ********************");
 
