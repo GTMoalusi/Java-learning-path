@@ -2,10 +2,10 @@ package login_System;
 
 public class User {
 
-    private String name;
-    private String surname;
-    private String email;
-    private String username;
+    private final String name;
+    private final String surname;
+    private final String email;
+    private final String username;
     private String password;
 
     private int failedAttempts;
