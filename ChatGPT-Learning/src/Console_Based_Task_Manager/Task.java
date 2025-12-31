@@ -2,18 +2,23 @@ package Console_Based_Task_Manager;
 
 public class Task {
 
+    public enum Status{
+        TODO,
+        DONE
+    }
+
     // Fields
-    private String taskId;
+    private final String taskId;
     private String titleOfTask;
     private String taskDescription;
-    private boolean taskStatus;
+    private Status status;
 
     // Constructor
     public Task(String taskId, String titleOfTask, String taskDescription){
         this.taskId = taskId;
         this.titleOfTask = titleOfTask;
         this.taskDescription = taskDescription;
-        this.taskStatus = false;
+        this.status = Status.TODO;
     }
 
     // Getters
@@ -29,14 +34,7 @@ public class Task {
         return taskDescription;
     }
 
-    public boolean isTaskStatus() {
-        return taskStatus;
-    }
-
     // Setter
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
 
     public void setTitleOfTask(String titleOfTask) {
         this.titleOfTask = titleOfTask;
@@ -46,14 +44,24 @@ public class Task {
         this.taskDescription = taskDescription;
     }
 
-    public void setTaskStatus(boolean taskStatus) {
-        this.taskStatus = taskStatus;
+    // Unique Methods
+    public void markAsDone() {
+        this.status = Status.DONE;
+    }
+
+    public void markAsTodo() {
+        this.status = Status.TODO;
+    }
+
+    public Status getStatus() {
+        return status;
     }
 
     @Override
     public String toString(){
         return "TaskId: " + taskId +
                 "\nTask title: " + titleOfTask +
-                "\nTask description: " + taskDescription;
+                "\nTask description: " + taskDescription +
+                "\nStatus: " + status;
     }
 }

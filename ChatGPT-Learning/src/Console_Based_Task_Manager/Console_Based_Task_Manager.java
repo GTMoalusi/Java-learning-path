@@ -86,10 +86,7 @@ public class Console_Based_Task_Manager {
 
     static void viewTasks(){
         for (Task task : tasks){
-            //System.out.println(task.toString());
-            System.out.println("TaskId is: " + task.getTaskId() +
-                    "\nTask title: " + task.getTitleOfTask() +
-                    "\nTask description: " + task.getTaskDescription());
+            System.out.println(task);
         }
     }
 
@@ -101,13 +98,33 @@ public class Console_Based_Task_Manager {
         for (Task task : tasks){
             if (task.getTaskId().equals(taskIdToUpdate)){
 
-                System.out.print("Enter your new title: ");
-                String newTitleOfTask = scanner.nextLine();
-                task.setTitleOfTask(newTitleOfTask);
+                System.out.println("1. Update title");
+                System.out.println("2. Update description");
+                System.out.println("3. Mark as DONE");
+                System.out.println("4. Mark as TODO");
+                System.out.print("Select option: ");
 
-                System.out.print("Enter your new description: ");
-                String newDescriptionOfTask = scanner.nextLine();
-                task.setTaskDescription(newDescriptionOfTask);
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter new title: ");
+                        task.setTitleOfTask(scanner.nextLine());
+                        break;
+                    case 2:
+                        System.out.print("Enter new description: ");
+                        task.setTaskDescription(scanner.nextLine());
+                        break;
+                    case 3:
+                        task.markAsDone();
+                        break;
+                    case 4:
+                        task.markAsTodo();
+                        break;
+                    default:
+                        System.out.println("Invalid option.");
+                }
 
                 System.out.println("Task successfully updated.");
                 found = true;
