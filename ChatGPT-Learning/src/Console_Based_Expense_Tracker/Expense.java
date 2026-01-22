@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Expense {
 
-    // Fields/Attributes
+    // Field/ Attributes
     private final int id;
     private final String description;
     private final double amount;
@@ -12,7 +12,7 @@ public class Expense {
     private final LocalDate date;
 
     // Constructor
-    public Expense(int id, String description, double amount, String category, LocalDate date) {
+    public Expense(int id, String description, double amount, String category, LocalDate date){
         this.id = id;
         this.description = description;
         this.amount = amount;
@@ -21,33 +21,30 @@ public class Expense {
     }
 
     // Getters
-    public int getId() {
+    public int getId(){
         return id;
     }
-
-    public String getDescription() {
+    public String getDescription(){
         return description;
     }
-
     public double getAmount() {
         return amount;
     }
-
     public String getCategory() {
         return category;
     }
-
     public LocalDate getDate() {
         return date;
     }
 
     @Override
     public String toString(){
-        return "Expense --> {" +
+        return "Expense -> {" +
                 "id= " + id +
                 ", description= " + description +
                 ", amount= R" + amount +
                 ", category= " + category +
-                ", date= " + date;
+                ", date= " + date +
+                "}";
     }
 }

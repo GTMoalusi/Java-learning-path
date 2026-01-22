@@ -16,7 +16,7 @@ public class ExpenseTracker {
         this.nextId = 1;
     }
 
-    // Unique Methods
+    //Unique Method
     public Expense addExpense(String description, double amount, String category){
         Expense expense = new Expense(nextId, description, amount, category, LocalDate.now());
 
@@ -35,7 +35,6 @@ public class ExpenseTracker {
         for (Expense expense : expenses){
             total += expense.getAmount();
         }
-
         return total;
     }
 }
